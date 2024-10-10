@@ -63,4 +63,46 @@ button {
 		cursor: pointer;
 	}
 }
-/* button:hover {} */
+
+
+.racetrack {
+	margin-top: 2em;
+	border: 3px solid darkgray;
+
+	& > * {
+		width: 4em;
+		height: 2em;
+		border: 1px solid black;
+		background-color: rgb(222, 231, 248);
+		position: relative;
+		left: 0%;
+		transition: background-color 2.5s, left 4s;
+		/* transition: all 2.5s; */
+	}
+	.car1 { transition-timing-function: linear; }
+	.car2 { transition-timing-function: ease-in; }
+	.car3 { transition-timing-function: ease-out; }
+	.car4 { transition-timing-function: ease; }
+
+}
+.racetrack:hover {
+	& > * {
+		background-color: rgb(60, 87, 136);
+	}
+
+	.car1, .car2, .car3, .car4 {
+		left: 90%;
+	}
+}
+
+.grow {
+	--shadow: rgb(74, 74, 74);
+	box-shadow: 0.4em 0.3em 0.1em var(--shadow);
+	transition: all 2s;
+
+	&:hover {
+		box-shadow: 0.4em 0.3em 0.3em 0.4em var(--shadow);
+		transform: translateY(-0.4em) scale(1.10);
+	}
+}
+
